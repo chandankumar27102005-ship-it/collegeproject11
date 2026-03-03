@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <title>CMS College · dynamic portal</title>
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Google Fonts: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+     
+</head>
+<body>
+    <div id="bg-slideshow"></div>
+    <div id="bg-overlay"></div>
+    <div id="progress-bar"></div>
+
+    <!-- intro -->
+    <div id="intro-overlay">
+        <canvas id="intro-canvas"></canvas>
+        <i class="fas fa-rocket rocket-ship"></i>
+        <div class="intro-content">
+            <div class="blast-text">WELCOME CMS FAMILY</div>
+        </div>
+        <div class="skip-intro" id="skipIntro">skip</div>
+    </div>
+
+    <!-- main -->
+    <div id="main-content">
+        <nav class="navbar" id="navbar">
+            <div class="nav-left">
+                <div class="logo-circle">CMS</div>
+                <span class="college-name-nav">CMS College</span>
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home" id="homeLink">Home</a></li>
+                <li><a href="#events" id="eventsLink">Events</a></li>
+                <li><a href="#" id="registerLink">Register</a></li>
+                <li><a href="#" id="contactLink">Contact</a></li>
+                <li><div class="theme-toggle" id="themeToggle"><i class="fas fa-sun"></i><i class="fas fa-moon"></i></div></li>
+            </ul>
+            <div class="hamburger" id="hamburger"><i class="fas fa-bars"></i></div>
+        </nav>
+
+        <section class="hero" id="home">
+            <div class="container">
+                <div class="hero-title-main">
+                    <h1>CMS College of Science & Commerce</h1>
+                    <div class="hero-sub">Official Event Portal</div>
+                    <div class="hero-sub" style="font-size:1rem;">Dept. of Computer Applications</div>
+                    <a href="#events" class="btn-explore">Explore <i class="fas fa-rocket"></i></a>
+                </div>
+            </div>
+        </section>
+
+        <section class="container" id="events">
+            <h2 class="section-title">✨ upcoming events</h2>
+            <div class="filter-bar" id="filterBar">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="technical">Technical</button>
+                <button class="filter-btn" data-filter="cultural">Cultural</button>
+                <button class="filter-btn" data-filter="sports">Sports</button>
+            </div>
+            <div class="event-grid" id="eventGrid"></div>
+        </section>
+
+        <footer id="contact">
+            <div class="container footer-content">
+                <div>© 2025 CMS · Dept of Computer Applications</div>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-x-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+                <div><i class="fas fa-envelope"></i> events@cmscollege.edu</div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- modals -->
+    <div id="registerModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" id="closeRegister">&times;</span>
+            <h2>📝 register</h2>
+            <form id="modalRegForm">
+                <div class="input-group"><input type="text" id="modalFullName" placeholder="full name" required></div>
+                <div class="input-group"><input type="email" id="modalEmail" placeholder="email" required></div>
+                <div class="input-group"><input type="tel" id="modalPhone" placeholder="phone" required></div>
+                <div class="input-group">
+                    <select id="modalEventSelect" required>
+                        <option value="">select event</option>
+                        <option value="HackCollab">HackCollab (tech)</option>
+                        <option value="Riff 2025">Riff 2025 (cultural)</option>
+                        <option value="Football T3">Football T3 (sports)</option>
+                    </select>
+                </div>
+                <button type="submit" class="reg-submit">register</button>
+                <div id="modalConfirmPopup" class="confirm-popup"></div>
+            </form>
+        </div>
+    </div>
+
+    <div id="contactModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" id="closeContact">&times;</span>
+            <h2>✉️ contact</h2>
+            <form id="modalContactForm">
+                <div class="input-group"><input type="text" placeholder="your name" required></div>
+                <div class="input-group"><input type="email" placeholder="your email" required></div>
+                <div class="input-group"><textarea rows="3" placeholder="message" required></textarea></div>
+                <button type="submit" class="contact-submit">send</button>
+                <div id="modalContactConfirm" class="confirm-popup"></div>
+            </form>
+        </div>
+    </div>
+
+    <button id="back-to-top"><i class="fas fa-arrow-up"></i></button>
+    <script src="java.js"></script>
+
+</body>
+</html>
